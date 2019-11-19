@@ -1,13 +1,18 @@
-var calculator = require('../src/calculator.js');
-
+var {Calculator} = require('../src/calculator.js');
+let calc = new Calculator();
 describe( "Simple calculator to add multiple numbers", function(){
     it("Should be able to add multiple numbers", function(){
-        expect(calculator.add(1,2,3,4)).toBe(10);
+        expect(calc.add(1,2,3,4)).toBe(10);
     });
 });
 
 describe("Simple calculator to multiply multiple numbers",function(){
     it("should multiply multiple numbers",function(){
-        expect(calculator.multiply(1,2,3,4)).toBe(24);
+        expect(calc.multiply(1,2,3,4)).toBe(24);
     });
 });
+// describe("Remember the last result calculated", function(){
+//     it("should return the last calculated result by the Add function", function(){
+//         expect(calc.last(calc.add(1,2))).toBe(3);
+//     });
+// });
