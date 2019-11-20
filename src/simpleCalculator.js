@@ -1,7 +1,8 @@
 class Calculator{
     constructor(){ 
+        let arr = [];
     }
-
+    
     add(...args){
         var sum = 0;
         for(let i = 0; i<args.length; i++){
@@ -32,11 +33,23 @@ class Calculator{
     last(){ 
         return this.capture;
     }
+    set_slot(){
+        for (var i =0; i<args.length;i++){
+            this.arr[i]= this.tog.last();
+        }
+    }
+    get_slot(){
+        for (var i =0; i<args.length;i++){
+            this.arr[i]= this.tog.last();
+        }
+        return arr[i];
+    }
 }
 var tog = new Calculator();
 console.log(tog.add(1,2));
 //console.log(tog.multiply(1,2,3,4));
 console.log(tog.multiply(5,'LAST'));
+// console.log(get_slot(1));
 module.exports = {
    Calculator
 }
