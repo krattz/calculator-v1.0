@@ -1,19 +1,21 @@
 class Calculator{
     constructor(){ 
-        let arr = [];
+        this.arr = [];
+        this.capture = 0; 
     }
-    
+
     add(...args){
         var sum = 0;
         for(let i = 0; i<args.length; i++){
              
             if (args[i] == 'LAST') {
-                sum+= this.capture;
-            } else {
-                sum+= args[i];
-            }
+                args[i]= this.capture;
+            } 
+             
+            sum+= args[i];
             args[i] = this.capture;
             this.capture = sum;
+            this.arr[i] = sum;
         } 
         return sum;
     }
@@ -33,23 +35,28 @@ class Calculator{
     last(){ 
         return this.capture;
     }
+
     set_slot(){
-        for (var i =0; i<args.length;i++){
-            this.arr[i]= this.tog.last();
-        }
+          this.arr.push(this.capture);
+
     }
-    get_slot(){
-        for (var i =0; i<args.length;i++){
-            this.arr[i]= this.tog.last();
-        }
-        return arr[i];
+    get_slot(x){ 
+        return this.arr[x];   
     }
 }
 var tog = new Calculator();
 console.log(tog.add(1,2));
-//console.log(tog.multiply(1,2,3,4));
-console.log(tog.multiply(5,'LAST'));
-// console.log(get_slot(1));
+console.log(tog.get_slot(1));
+// console.log(tog.multiply(5,'LAST'));
+console.log(tog.add(10,20));
+tog.set_slot(2);
+console.log(tog.get_slot(2));
+console.log(tog.add(100,200));
+tog.set_slot(1);
+console.log(tog.get_slot(2));
+console.log(tog.get_slot(2));
+console.log(tog.last());
+
 module.exports = {
    Calculator
 }
