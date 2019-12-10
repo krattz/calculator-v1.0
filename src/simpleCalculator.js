@@ -46,17 +46,17 @@ class Calculator{
 }
 var tog = new Calculator();
 console.log(tog.add(1,2));
-console.log(tog.get_slot(1));
-// console.log(tog.multiply(5,'LAST'));
+console.log(tog.multiply("LAST",2));
 console.log(tog.add(10,20));
-tog.set_slot(2);
-console.log(tog.get_slot(2));
+tog.set_slot('2');
+console.log(tog.get_slot('2'));
 console.log(tog.add(100,200));
-tog.set_slot(1);
-console.log(tog.get_slot(2));
-console.log(tog.get_slot(2));
+tog.set_slot('3');
+console.log(tog.get_slot('3'));
 console.log(tog.last());
-
+console.log(tog.get_slot('2'));
+console.log(tog.get_slot('3'));
+console.log(tog.add("LAST",tog.get_slot('2')));
 module.exports = {
    Calculator
 }
