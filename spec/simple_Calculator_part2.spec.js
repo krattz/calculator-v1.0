@@ -1,4 +1,4 @@
-var {Calculator} = require('../src/simpleCalculator.js');
+var {Calculator} = require('../src/simple_Calculator_part2');
 let calc = new Calculator();
 describe( "Simple calculator to add multiple numbers", function(){
     it("Should be able to add multiple numbers", function(){
